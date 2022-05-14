@@ -1,8 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Groups') }}
-        </h2>
+        <div class="flex justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Groups') }}
+            </h2>
+            <x-button
+                x-data="{}"
+                x-on:click="window.livewire.emitTo('user-group-modal', 'show')"
+            >
+                Add Group
+            </x-button>
+        </div>
+
+        <livewire:user-group-modal/>
     </x-slot>
 
     <div class="py-12">
